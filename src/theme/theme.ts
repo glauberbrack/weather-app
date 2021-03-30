@@ -13,7 +13,7 @@ export default {
       n300: '#2a2d63'
     },
     yellow: {
-      default: '#ffcd46',
+      default: '#ffca28',
       n100: '#f3d21a',
       n200: '#ebbc3e',
       n300: '#E6830B'

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Row, Loader, Text } from '~/components';
+import { Column, Loader, Text, Button } from '~/components';
 
 const Home: React.FC = () => {
   const [loading, setIsLoading] = useState(true);
@@ -15,9 +15,14 @@ const Home: React.FC = () => {
     return <Loader />;
   }
   return (
-    <Row>
+    <Column>
       <Text>Home Page</Text>
-    </Row>
+      <Button
+        text='glauber'
+        icon='arrow-right'
+        onPress={() => console.log('button on click test')}
+      />
+    </Column>
   );
 };
 
