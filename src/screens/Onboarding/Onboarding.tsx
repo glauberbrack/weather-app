@@ -19,7 +19,7 @@ const Onboarding: React.FC = () => {
     return <Loader />;
   }
   return (
-    <Column>
+    <Column backgroundColor={theme.colors.white} style={{ flex: 1 }}>
       <OnboardingImage source={sun} />
       <Wrapper>
         <Row mt={250}>
