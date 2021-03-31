@@ -41,9 +41,7 @@ const Home: React.FC = () => {
       <Text variant='regular'>Olá!</Text>
       <Weather data={currentWeather} />
       <Row my={20}>
-        <WeatherHourly />
-        <WeatherHourly />
-        <WeatherHourly />
+        <WeatherHourly data={hourlyWeather} />
       </Row>
       <WeatherDetails />
     </Wrapper>
