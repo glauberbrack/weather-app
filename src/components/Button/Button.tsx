@@ -9,7 +9,7 @@ import styled from 'styled-components/native';
 interface IButtonComponentProps {
   text: string;
   icon?: string;
-  onPress?: void;
+  onPress?: () => void;
 }
 
 const ButtonComponent: FC<IButtonComponentProps> = ({
