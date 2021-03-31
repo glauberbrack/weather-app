@@ -17,8 +17,7 @@
 
 ## 💻 Project
 
- 
-
+ Stay connect with your location forecast for a better tomorrow!
 
 ## :rocket: Techs
 
@@ -36,6 +35,8 @@
 
 ### Requeriments
 
+Rename the file `app-key-example.ts` to `api-key.ts` inside the folder `src/constants` and add you API KEY from OpenWeather API.
+
 ```bash
 # Clone this
 $ git clone https://github.com/glauberbrack/weather-app
@@ -51,11 +52,14 @@ $ yarn android
 ```
 
 ### Tests
-```bash
-# To check about the tests
+
+I added some simple components rendering tests in the project.
+
+
+````bash
+# Run tests
 $ yarn test
 ```
-
 ---
 
 ☕ Glauber Brack - <a href="mailto:glauber@brack.com.br?Subject=Hello%20you">Talk to me!</a>
