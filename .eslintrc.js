@@ -35,6 +35,7 @@ module.exports = {
     'prettier/prettier': 'error',
     'react-native/no-inline-styles': 'off',
     'no-catch-shadow': 'off',
+    'react/prop-types': 'off',
     'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
     'import-helpers/order-imports': [
       'warn',

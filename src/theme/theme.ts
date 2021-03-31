@@ -4,7 +4,8 @@ export default {
       default: '#666bd0',
       n100: '#4a4fab',
       n200: '#3c408a',
-      n300: '#512DA8'
+      n300: '#512DA8',
+      n400: '#494ca1'
     },
     blue: {
       default: '#3189ec',
@@ -13,7 +14,7 @@ export default {
       n300: '#2a2d63'
     },
     yellow: {
-      default: '#ffcd46',
+      default: '#ffca28',
       n100: '#f3d21a',
       n200: '#ebbc3e',
       n300: '#E6830B'
