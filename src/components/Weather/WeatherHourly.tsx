@@ -6,6 +6,7 @@ const WeatherHourlyComponent: React.FC = () => {
   return (
     <Column
       p={10}
+      mr={15}
       backgroundColor='blue'
       alignItems='center'
       justifyContent='space-between'
