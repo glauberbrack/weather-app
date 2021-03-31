@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <img alt="weather" title="#weather" src=".github/app.png" width='320px' />
+    <img alt="weather" title="#weather" src=".github/app.png" width='720px' />
 </h1>
 
 
@@ -56,7 +56,7 @@ $ yarn android
 I added some simple components rendering tests in the project.
 
 
-````bash
+```bash
 # Run tests
 $ yarn test
 ```
