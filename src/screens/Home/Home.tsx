@@ -55,7 +55,7 @@ const Home: React.FC = () => {
       <Row my={40}>
         <WeatherHourly data={hourlyWeather} />
       </Row>
-      <WeatherDetails />
+      <WeatherDetails data={currentWeather} />
     </Column>
   );
 };
