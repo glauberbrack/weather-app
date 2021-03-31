@@ -23,30 +23,32 @@ const WeatherComponent: React.FC<IWeatherProps> = ({ data }) => {
   const { dt, name, main, weather } = data;
 
   return (
-    <Column mt={30} alignItems='flex-end'>
-      <Text variant='regular' mb={10}>
-        {formatDate(dt)}
-      </Text>
+    <Column mt={30}>
       <Row
         p={15}
-        backgroundColor={theme.colors.purple.n300}
+        backgroundColor={theme.colors.purple.n400}
         justifyContent='space-between'
         alignItems='center'
-        borderRadius={4}
+        borderRadius={15}
         width='100%'
         height={150}
       >
-        <Column alignItems='center'>
+        <Column>
+          <Text variant='bigger' color={theme.colors.yellow.default}>
+            {formatTemperature(main.temp)}
+          </Text>
           <Text variant='regular' color={theme.colors.white}>
             {weather[0].description}
           </Text>
-          <Text variant='bigger' color={theme.colors.white}>
-            {formatTemperature(main.temp)}
+        </Column>
+        <Column alignItems='flex-end'>
+          <Text variant='medium' color={theme.colors.white}>
+            {name}
+          </Text>
+          <Text variant='small' mb={10} color={theme.colors.yellow.default}>
+            {formatDate(dt)}
           </Text>
         </Column>
-        <Text variant='medium' color={theme.colors.white}>
-          {name}
-        </Text>
       </Row>
     </Column>
   );

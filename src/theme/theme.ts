@@ -4,7 +4,8 @@ export default {
       default: '#666bd0',
       n100: '#4a4fab',
       n200: '#3c408a',
-      n300: '#512DA8'
+      n300: '#512DA8',
+      n400: '#494ca1'
     },
     blue: {
       default: '#3189ec',

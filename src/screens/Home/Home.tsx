@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Wrapper, Row, Loader, Text, Weather, WeatherHourly, WeatherDetails } from '~/components';
+import {
+  Wrapper,
+  Row,
+  Column,
+  Loader,
+  Text,
+  Weather,
+  WeatherHourly,
+  WeatherDetails
+} from '~/components';
 import { WeatherProps, HourlyProps } from '~/constants';
 import { AppState } from '~/redux/reducers/rootReducer';
 import { getWeather, getWeatherHourly } from '~/services/weather';
+import { theme } from '~/theme';
 
 const Home: React.FC = () => {
   const { userLocation } = useSelector((state: AppState) => state.userLocation);
@@ -37,14 +47,16 @@ const Home: React.FC = () => {
     return <Loader />;
   }
   return (
-    <Wrapper>
-      <Text variant='regular'>Olá!</Text>
+    <Column backgroundColor={theme.colors.purple.default} p={25} flex={1}>
+      <Text variant='regular' color={theme.colors.white}>
+        Olá!
+      </Text>
       <Weather data={currentWeather} />
-      <Row my={20}>
+      <Row my={40}>
         <WeatherHourly data={hourlyWeather} />
       </Row>
       <WeatherDetails />
-    </Wrapper>
+    </Column>
   );
 };
 

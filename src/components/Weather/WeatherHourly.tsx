@@ -44,22 +44,20 @@ const WeatherHourlyComponent: React.FC<IWeatherHourlyProps> = ({ data }) => {
           p={10}
           mr={15}
           borderColor={theme.colors.purple.default}
+          backgroundColor={theme.colors.white}
           borderWidth={1}
           alignItems='center'
           justifyContent='space-between'
           width={100}
-          borderRadius={4}
+          height={100}
+          borderRadius={15}
         >
           <Text color={theme.colors.purple.default}>{formatTime(item.dt)}</Text>
-          <Icon
-            source={{
-              uri: `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`,
-              priority: 'high'
-            }}
-            resizeMode='contain'
-          />
-          <Text color={theme.colors.purple.default}>{item.weather[0].description}</Text>
-          <Text color={theme.colors.purple.default}>{formatTemperature(item.temp)}</Text>
+
+          <Text variant='bigger' color={theme.colors.purple.default}>
+            {formatTemperature(item.temp)}
+          </Text>
+          <Text color={theme.colors.purple.n300}>{item.weather[0].description}</Text>
         </Column>
       )}
     />
@@ -70,10 +68,5 @@ const HourlyList = styled(FlatList as new () => FlatList<IWeatherItem>).attrs({
   horizontal: true,
   showsHorizontalScrollIndicator: false
 })``;
-
-const Icon = styled(FastImage)`
-  width: 69px;
-  height: 69px;
-`;
 
 export default WeatherHourlyComponent;
