@@ -2,24 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Wrapper, Row, Loader, Text, Weather, WeatherHourly, WeatherDetails } from '~/components';
+import { WeatherProps, HourlyProps } from '~/constants';
 import { AppState } from '~/redux/reducers/rootReducer';
-import { getWeatherHoruly } from '~/services/weather';
+import { getWeather, getWeatherHourly } from '~/services/weather';
 
 const Home: React.FC = () => {
   const { userLocation } = useSelector((state: AppState) => state.userLocation);
+
   const [loading, setIsLoading] = useState(true);
+  const [currentWeather, setCurrentWeather] = useState<WeatherProps>();
+  const [hourlyWeather, sethourlyWeather] = useState<HourlyProps>();
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+    const loadWeather = async () => {
+      const current = await getWeather(userLocation.lat, userLocation.long);
+      const hourly = await getWeatherHourly(userLocation.lat, userLocation.long);
 
-    const loadLocation = async () => {
-      const request = await getWeatherHoruly(37.4219983, -122.084);
-      console.log('teste', userLocation);
+      Promise.all([current, hourly])
+        .then(weather => {
+          setCurrentWeather(weather[0].data);
+          sethourlyWeather(weather[1].data.hourly);
+          setIsLoading(false);
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.log(error);
+        });
     };
-    loadLocation();
-  }, []);
+
+    loadWeather();
+  }, [userLocation.lat, userLocation.long]);
 
   if (loading) {
     return <Loader />;
