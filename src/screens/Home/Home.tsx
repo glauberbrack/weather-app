@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { Column, Loader, Text } from '~/components';
+import { Wrapper, Row, Loader, Text, Weather, WeatherHourly, WeatherDetails } from '~/components';
+import { getWeatherHoruly } from '~/services/weather';
 
 const Home: React.FC = () => {
   const [loading, setIsLoading] = useState(true);
@@ -9,15 +10,27 @@ const Home: React.FC = () => {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
+
+    const loadLocation = async () => {
+      const request = await getWeatherHoruly(37.4219983, -122.084);
+    };
+    loadLocation();
   }, []);
 
   if (loading) {
     return <Loader />;
   }
   return (
-    <Column>
-      <Text>Home Page</Text>
-    </Column>
+    <Wrapper>
+      <Text variant='regular'>Olá!</Text>
+      <Weather />
+      <Row my={20}>
+        <WeatherHourly />
+        <WeatherHourly />
+        <WeatherHourly />
+      </Row>
+      <WeatherDetails />
+    </Wrapper>
   );
 };
 

@@ -42,7 +42,7 @@ const Onboarding: React.FC = () => {
           Geolocation.getCurrentPosition(
             position => {
               const { latitude, longitude } = position.coords;
-              console.log('coordenadas', latitude, longitude);
+              console.log('coordenadas', typeof latitude, longitude);
             },
             error => {
               console.error(error.code, error.message);
